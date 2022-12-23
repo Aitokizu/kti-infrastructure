@@ -12,7 +12,7 @@ services:
       - flask
 
   flask:
-    image: "/flask:1.0"
+    image: "kapitoshka/flask:1.0"
     container_name: flask
     environment:
       - FLASK_DEBUG=True
@@ -34,3 +34,4 @@ services:
       - "5432:5432"
     volumes:
       - ./data:/var/lib/postgresql/data
+      - ./init-user-db.sql:/docker-entrypoint-initdb.d/init-user-db.sql
